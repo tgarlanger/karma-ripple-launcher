@@ -1,0 +1,31 @@
+{
+  "name": "karma-ripple-launcher",
+  "version": "0.1.2",
+  "description": "A Karma plugin. Launcher for Ripple. Based on karma-chrome-launcher and karma-cordova-launcher.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tgarlanger/karma-ripple-launcher.git"
+  },
+  "keywords": [
+    "karma-plugin",
+    "karma-launcher",
+    "ripple"
+  ],
+  "author": "Tony Garlanger <tgarlanger@gmail.com>",
+  "dependencies": {},
+  "peerDependencies": {
+    "karma": ">=0.9.3"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-npm": "~0.0.2",
+    "grunt-bump": "~0.0.6",
+    "grunt-auto-release": "~0.0.2"
+  },
+  "contributors": []
+}
