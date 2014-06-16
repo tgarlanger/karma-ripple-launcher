@@ -23,9 +23,10 @@
   "license": "MIT",
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-npm": "~0.0.2",
+    "grunt-auto-release": "~0.0.2",
     "grunt-bump": "~0.0.6",
-    "grunt-auto-release": "~0.0.2"
+    "grunt-npm": "~0.0.2",
+    "ripple-emulator": "^0.9.22"
   },
   "contributors": []
 }

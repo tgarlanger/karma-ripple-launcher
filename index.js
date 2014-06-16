@@ -1,34 +1,40 @@
 /*
  * Based on karma-ripple-launcher
  */
-//var fs = require('fs');
+require('ripple-emulator');
+var exec = require('child-process-promise').exec;
 
-var Ripple = function(baseBrowserDecorator, config) {
+var RippleBrowser = function(baseBrowserDecorator, config, args) {
   'use strict';
+
+  baseBrowserDecorator(this);
+
+  var flags = args.flags || [];
 
   var self = this;
 
-  console.log('stdout: starting ripple Launcher');
-
   self.settings = config.rippleSettings;
 
-  baseBrowserDecorator(this);
+  console.log('Starting ripple in: ' + config.rippleSettings.codePath);
+
+  exec('ripple elmulate --path ' + config.rippleSettings.codePath);
+
 };
 
-Ripple.prototype = {
+RippleBrowser.prototype = {
   name: 'Ripple',
 
   DEFAULT_CMD: {
-    linux: require('ripple emulate').path,
-    darwin: require('ripple emulate').path,
-    win32: 'ripple emulate' // Will not work, need to address later
+    linux: 'ripple',
+    darwin: 'ripple',
+    win32: 'ripple' // Will not work, need to address later
   },
   ENV_CMD: 'RIPPLE_BIN'
 };
 
-Ripple.$inject = ['baseBrowserDecorator', 'config'];
+RippleBrowser.$inject = ['baseBrowserDecorator', 'config', 'args'];
 
 // PUBLISH DI MODULE
 module.exports = {
-  'launcher:Ripple': ['type', Ripple],
+  'launcher:Ripple': ['type', RippleBrowser],
 };

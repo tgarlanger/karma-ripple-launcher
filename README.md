@@ -1,22 +1,22 @@
-# karma-chrome-launcher
+# karma-ripple-launcher
 
-> Launcher for Google Chrome and Google Chrome Canary.
+> Launcher for Ripple.
 
 ## Installation
 
-The easiest way is to keep `karma-chrome-launcher` as a devDependency in your `package.json`.
+The easiest way is to keep `karma-ripple-launcher` as a devDependency in your `package.json`.
 ```json
 {
   "devDependencies": {
     "karma": "~0.10",
-    "karma-chrome-launcher": "~0.1"
+    "karma-ripple-launcher": "~0.1"
   }
 }
 ```
 
 You can simple do it by:
 ```bash
-npm install karma-chrome-launcher --save-dev
+npm install karma-ripple-launcher --save-dev
 ```
 
 ## Configuration
@@ -24,22 +24,18 @@ npm install karma-chrome-launcher --save-dev
 // karma.conf.js
 module.exports = function(config) {
   config.set({
-    browsers: ['Chrome', 'Chrome_without_security'],
-
-    // you can define custom flags
-    customLaunchers: {
-      Chrome_without_security: {
-        base: 'Chrome',
-        flags: ['--disable-web-security']
-      }
-    }
+    browsers: ['Ripple'],
+    
+    rippleSettings: {
+      codePath: 'path/to/app'
+    },
   });
 };
 ```
 
 You can pass list of browsers as a CLI argument too:
 ```bash
-karma start --browsers Chrome,Chrome_without_security
+karma start --browsers Ripple
 ```
 
 ----
